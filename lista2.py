@@ -1,23 +1,18 @@
 print("Lista do Supermercado.")
 
-lista1 = []
+lista_de_compras = []
 
-n = 1
+for _ in range(5):
+    item = input("O que deseja adicionar a lista?\n")
+    lista_de_compras.append(item)
 
-while True:
-    pergunta = input("O que deseja adicionar a lista?\n")
-    lista1.append(pergunta)
-       
-    if n == 5:
-        break
-    
-    n += 1
-    
-imprimir = input("Deseja ver os itens na lista? S/N\n")
+imprimir = input("Deseja ver os itens na lista? (S/N)\n").upper()
 
 if imprimir == 'S':
-    print(f"Sua lista de compras:\n{lista1}")
+    print("Sua lista de compras:")
+    for item in lista_de_compras:
+        print(f"- {item}")
 elif imprimir == 'N':
     print('Até mais!')
 else:
-    print("Resposta errada reinicie o programa.")
+    print("Resposta inválida. Por favor, reinicie o programa.")
